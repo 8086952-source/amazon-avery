@@ -33,8 +33,6 @@ basic.forever(function () {
             }
             basic.clearScreen()
             servos.P0.setAngle(90)
-            basic.pause(5000)
-            servos.P0.setAngle(0)
             while (pins.digitalReadPin(DigitalPin.P1) != 1) {
                 pins.digitalWritePin(DigitalPin.P2, 1)
                 basic.pause(500)
@@ -45,6 +43,8 @@ basic.forever(function () {
                 pins.digitalWritePin(DigitalPin.P2, 0)
                 basic.pause(500)
             }
+            basic.pause(5000)
+            servos.P0.setAngle(0)
             if (pins.digitalReadPin(DigitalPin.P1) == 1) {
                 pins.digitalWritePin(DigitalPin.P2, 1)
                 servos.P0.setAngle(90)
